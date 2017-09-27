@@ -1,0 +1,8 @@
+@CHARSET "UTF-8";
+@IMPORT url("common.css");
+/*board_list.jsp*/
+#board_tab{width:80%;text-align:center;margin:0 auto;}
+/*board_write.jsp*/
+#board_submit{width:350px;text-align:center;margin:0 auto;}
+/*board_write*/
+#wrapper{background-image: url(../img/꽃.jpg)}

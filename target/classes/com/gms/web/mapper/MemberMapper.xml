@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  
+  <!-- public interface MemberMapper {
+	public String insert(Map<?,?>map);
+	public List<?> selectAll(CommandDTO cmd);
+	public String count(CommandDTO cmd);
+	public MemberDTO login(CommandDTO cmd);
+	public List<?> selectByName(CommandDTO cmd);
+	public String update(MemberDTO memeber);
+	public String delete(CommandDTO cmd);
+	public StudentDTO selectById(CommandDTO cmd);
+}
+   -->
+  
+<mapper namespace="com.gms.web.mapper.MemberMapper">
+<select  id="count" resultType="string">
+select count(*) as count from member;
+</select>
+
+<select  id="login" resultType="com.gms.web.member.MemberDTO" parameterType="com.gms.web.command.CommandDTO">
+select * from member where member_id= #{search};
+</select>
+<select  id="selectSome" resultType="com.gms.web.member.StudentDTO" parameterType="com.gms.web.command.CommandDTO">
+ select c.*, num from 
+			 (select @Rnum := @Rnum + 1 num, t.* 
+		   from student t,(select @rnum := 0) b) c 
+		  where num between #{startRow} and #{endRow}  ;
+ </select>
+ <select  id="selectOne" resultType="com.gms.web.member.StudentDTO" parameterType="com.gms.web.command.CommandDTO">
+  select t2.*
+  from (select @rnum := @rnum +1 as num, s.*
+        from student s, (select @rnum := 0) b 
+        where name like '%${search}%' 
+        order by num desc) t2
+  where t2.num between #{startRow} and #{endRow} ; 
+
+ </select>
+ <delete  id="delete" parameterType="com.gms.web.command.CommandDTO">
+	delete from member where member_id like #{search};
+ </delete>
+<select  id="selectById" resultType="com.gms.web.member.StudentDTO" parameterType="com.gms.web.command.CommandDTO">
+select id, name, ssn, phone,email,password, subjects,regdate from student where id like #{search};
+
+ </select>
+ <update id="update"  parameterType="com.gms.web.member.MemberDTO">
+ UPDATE Member SET email=#{email}, phone=#{phone}
+ WHERE member_id =#{id}
+ </update>
+  <insert id="insert"  parameterType="com.gms.web.member.MemberDTO">
+INSERT INTO Member(member_id,password,name,ssn,regdate,major_id,phone,email,profile)
+VALUES(#{id},#{password},#{name},#{ssn},now(),#{major_id},#{phone},#{email},#{profile});
+ </insert>
+</mapper>

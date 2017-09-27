@@ -1,0 +1,10 @@
+@charset "UTF-8";
+.col-sm-3{padding:20px}
+.list-type{list-style-type:none; font-size: 16px;margin: 0; padding: 0;}
+#link-list{color:white; margin-right: 230px; margin-left: 230px;}
+.list-countries{list-style-type:none;margin: 0; padding: 0;}
+.footer-countries{margin-right: 230px;margin-left: 230px;}
+.footer-column{margin-right: 230px;margin-left: 230px;}
+#special_prices{margin-right: 230px;margin-left: 230px;}
+.image { position: relative; width: 100%; }
+#img{ position: absolute; top: 200px; left: 0; width: 100%; }

@@ -1,0 +1,34 @@
+@CHARSET "UTF-8";
+html, body{height: 100%; margin: 0; padding: 0; border: 0;}
+table{border-collapse:collapse;}
+#wrapper{position: relative; min-height:100%;padding-bottom:100px;}
+footer{position: absolute; bottom: 0; left: 0; width: 100%;  height: 100px;  background-color: lightpink;}
+footer div{width:80%;}
+#go_main{float:right}
+#container{width:100%; margin:0 auto; text-align: center}
+#text-cen{text-align: center}
+#title{text-align:center; margin:0 auto;}
+#text-cen{text-align:center;}
+.gms-text-center{text-align:center;}
+.gms-border-black{border: 1px solid black;}
+.gms-width-30pro{width:30%;}
+.gms-width-100pro{width:100%;}
+.gms-text-deconone{text-decoration: none}
+.gms-margine-auto{margin:0 auto}
+.gms-list-none{list-style-type:none}
+.gms-display-inline{display: inline-block;}
+.gms-color-green{color:green}
+.gms-backcolor-yellow{background-color:yellow}
+.gms-color-blue{color:blue}
+.gms-backcolor-red{background-color:#9afafa}
+.gms-float-right{float:right}
+
+
+/* unvisited link */
+a:link { color: black;}
+/* visited link */
+a:visited {color: green;}
+/* mouse over link */
+a:hover {color: red;}
+/* selected link */
+a:active {color: blue;}
